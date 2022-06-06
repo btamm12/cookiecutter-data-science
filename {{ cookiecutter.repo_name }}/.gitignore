@@ -87,3 +87,17 @@ target/
 
 # Mypy cache
 .mypy_cache/
+
+# CREDENTIALS
+gdrive_cred.json
+
+# data
+/data
+/data_example/
+/data_example.zip
+
+# Lightning logs.
+lightning_logs/
+
+# venv
+venv/

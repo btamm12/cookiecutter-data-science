@@ -23,6 +23,7 @@ def main(example, partition_idx, num_partitions):
 
     # Extract features.
     # TODO: call feature extraction code here
+    logger.info("[No feature extraction commands]")
     pass
 
     # from {{cookiecutter.pkg_name}}.data.split import Split

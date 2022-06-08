@@ -96,6 +96,9 @@ gdrive_cred.json
 /data_example/
 /data_example.zip
 
+# models
+/models
+
 # Lightning logs.
 lightning_logs/
 

@@ -34,47 +34,47 @@ requirements: test_environment
 
 ## Download dataset(s) and save in {{cookiecutter.repo_name}}data/raw/.
 download: requirements
-	$(PYTHON_INTERPRETER) src/data/make_download.py
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/data/make_download.py
 
 ## Perform preprocessing on raw dataset(s) and save results in {{cookiecutter.repo_name}}data/processed/.
 preprocess: download
-	$(PYTHON_INTERPRETER) src/data/make_preprocess.py
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/data/make_preprocess.py
 
 ## Create example dataset from preprocessed data for quicker development.
 example_dataset: preprocess
-	$(PYTHON_INTERPRETER) src/data/make_example_dataset.py
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/data/make_example_dataset.py
 
 ## Perform feature extraction on the preprocessed data. These features will be the input for the training.
 features: preprocess
-	$(PYTHON_INTERPRETER) src/data/make_features.py
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/data/make_features.py
 
 ## (example) Perform feature extraction on the preprocessed data. These features will be the input for the training.
 features_example: example_dataset
-	$(PYTHON_INTERPRETER) src/data/make_features.py --example
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/data/make_features.py --example
 
-## Do training. The trained models will be store in {{cookiecutter.repo_name}}/models.
+## Do training. The trained models will be saved in {{cookiecutter.repo_name}}/models.
 train: features
-	$(PYTHON_INTERPRETER) src/train/make_train.py
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/train/make_train.py
 
-## (example) Do training. The trained models will be store in {{cookiecutter.repo_name}}/models.
+## (example) Do training. The trained models will be saved in {{cookiecutter.repo_name}}/models.
 train_example: features_example
-	$(PYTHON_INTERPRETER) src/train/make_train.py --example
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/train/make_train.py --example
 
-## Make predictions on validation and test sets. The results will be stored in {{cookiecutter.repo_name}}/data.
+## Make predictions on validation and test sets. The results will be saved in {{cookiecutter.repo_name}}/data.
 predict: train
-	$(PYTHON_INTERPRETER) src/predict/make_predict.py
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/predict/make_predict.py
 
-## (example) Make predictions on validation and test sets. The results will be stored in {{cookiecutter.repo_name}}/data.
+## (example) Make predictions on validation and test sets. The results will be saved in {{cookiecutter.repo_name}}/data.
 predict_example: train_example
-	$(PYTHON_INTERPRETER) src/predict/make_predict.py --example
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/predict/make_predict.py --example
 
 ## Run evaluation script using predictions and ground-truth labels.
 eval: predict
-	$(PYTHON_INTERPRETER) src/eval/make_eval.py
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/eval/make_eval.py
 
 ## (example) Run evaluation script using predictions and ground-truth labels.
 eval_example: predict
-	$(PYTHON_INTERPRETER) src/eval/make_eval.py --example
+	$(PYTHON_INTERPRETER) {{cookiecutter.pkg_name}}/eval/make_eval.py --example
 
 
 

@@ -59,7 +59,7 @@ def _predict_model(config: Config, example: bool, split: Split, cpus: int):
     # Load best model.
     # Source: https://github.com/PyTorchLightning/pytorch-lightning/issues/924#issuecomment-591108496
     model_name = f"trained_model_{config.name}{example_name}"
-    model_dir = constants.MODELS_DIR.joinpath(model_name)
+    model_dir = constants.DIR_MODELS.joinpath(model_name)
     ckpt_paths = list(model_dir.glob("best*.ckpt"))
     if len(ckpt_paths) == 0:
         raise Exception(f"No checkpoint path found in {model_dir}.")

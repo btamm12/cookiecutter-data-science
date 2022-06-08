@@ -1,15 +1,45 @@
 # local package
 -e .
 
-# external requirements
+# general project requirements
+black
 click
-Sphinx
-coverage
-awscli
-flake8
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
 python-dotenv>=0.5.1
+requests
+tqdm
+wget
 {% if cookiecutter.python_interpreter != 'python3' %}
 
 # backwards compatibility
 pathlib2
 {% endif %}
+
+# This is needed to use the RTX 3090, A5000, etc.
+# Explained here:
+# - https://discuss.pytorch.org/t/rtx-3090-compatibility/110014/2
+# - https://pytorch.org/get-started/locally/
+#
+# Run the following command:
+# pip3 install -r requirements.txt --find-links https://download.pytorch.org/whl/torch_stable.html
+#
+# torch==1.11.0+cu113
+# torchvision==0.12.0+cu113
+# torchaudio==0.11.0+cu113
+
+# Otherwise use this:
+torch
+torchvision
+torchaudio
+
+# models
+datasets
+h5py
+librosa
+transformers
+huggingface_hub
+jiwer
+pytorch-lightning
+webdataset

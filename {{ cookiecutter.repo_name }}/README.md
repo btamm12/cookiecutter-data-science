@@ -77,8 +77,9 @@ make train
 make predict
 ```
 
-**8. Follow the [README file](src/eval/README.md) in the `src/eval/` folder to copy
-the ground-truth files and prediction files to the correct locations.**
+**8. Follow the [README file]({{cookiecutter.pkg_name}}/eval/README.md) in the
+`{{cookiecutter.pkg_name}}/eval/` folder to copy the ground-truth files and
+prediction files to the correct locations.**
 
 **9. Evaluate Models on Validation Set**
 ```

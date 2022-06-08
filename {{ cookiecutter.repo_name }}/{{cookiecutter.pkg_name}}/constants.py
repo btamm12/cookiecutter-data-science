@@ -15,7 +15,10 @@ from {{cookiecutter.pkg_name}}.data.split import Split
 DIR_REPO = None
 for path in Path(__file__).parents:
     if path.name == "{{cookiecutter.repo_name}}":
-        DIR_REPO = path
+        if path.parent.name == "{{cookiecutter.repo_name}}":
+            DIR_REPO = path.parent
+        else:
+            DIR_REPO = path
         break
 if DIR_REPO is None:
     raise Exception("Unable to locate root dir.")
@@ -28,9 +31,9 @@ DIR_DATA_RAW = DIR_DATA.joinpath("raw")
 DIR_DATA_SUBMISSION = DIR_DATA.joinpath("submission")
 
 # {{cookiecutter.repo_name}}/models/
-MODELS_DIR = DIR_REPO.joinpath("models")
+DIR_MODELS = DIR_REPO.joinpath("models")
 XLSR_NAME = "wav2vec2-xls-r-300m"
-XLSR_DIR = MODELS_DIR.joinpath(XLSR_NAME)
+XLSR_DIR = DIR_MODELS.joinpath(XLSR_NAME)
 
 # {{cookiecutter.repo_name}}/{{cookiecutter.pkg_name}}/
 SRC_DIR = DIR_REPO.joinpath("{{cookiecutter.pkg_name}}")

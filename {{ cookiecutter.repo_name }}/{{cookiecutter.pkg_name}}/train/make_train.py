@@ -14,7 +14,7 @@ from {{cookiecutter.pkg_name}}.train.train_model import train_model
 @click.option('-n', '--num_partitions', default=1)
 @click.option('-c', '--cpus', default=4)
 def main(example, partition_idx, num_partitions, cpus):
-    """Train models and store the results in the following folder:
+    """Train models and save the results in the following folder:
     
     ```
     {{cookiecutter.repo_name}}/models/

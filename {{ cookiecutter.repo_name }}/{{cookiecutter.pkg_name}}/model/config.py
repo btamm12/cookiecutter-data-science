@@ -2,7 +2,7 @@ from enum import Enum
 from typing import List
 
 from {{cookiecutter.pkg_name}}.model.input import Input
-from {{cookiecutter.pkg_name}}.model.label import Label, NORM_MOS
+from {{cookiecutter.pkg_name}}.data.label import Label, NORM_MOS
 
 class Extractor(Enum):
     NONE = 0

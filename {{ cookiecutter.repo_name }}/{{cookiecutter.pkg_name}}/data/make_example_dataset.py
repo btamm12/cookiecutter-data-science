@@ -15,6 +15,7 @@ def main():
     logger.info("Constructing example dataset from preprocessed data.")
 
     # TODO: call example dataset scripts here
+    logger.info("[No example dataset commands]")
     pass
 
 

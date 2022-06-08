@@ -47,7 +47,7 @@ def _train_model(config: Config, example: bool, cpus: int):
     example_name = "_example" if example else ""
     example_str = "(example) " if example else ""
     out_name = f"trained_model_{config.name}{example_name}"
-    model_dir = constants.MODELS_DIR.joinpath(out_name)
+    model_dir = constants.DIR_MODELS.joinpath(out_name)
 
     best_ckpt_callback = ModelCheckpoint(
         monitor="val_loss",

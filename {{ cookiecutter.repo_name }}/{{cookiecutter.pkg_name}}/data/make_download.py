@@ -7,7 +7,7 @@ import os
 
 @click.command()
 def main():
-    """Download dataset(s) and store the results in the following folder:
+    """Download dataset(s) and save the results in the following folder:
 
     ```
     {{cookiecutter.repo_name}}/data/raw/
@@ -18,6 +18,7 @@ def main():
     logger.info("Downloading dataset(s).")
 
     # TODO: call download scripts here
+    logger.info("[No download commands]")
     pass
 
 

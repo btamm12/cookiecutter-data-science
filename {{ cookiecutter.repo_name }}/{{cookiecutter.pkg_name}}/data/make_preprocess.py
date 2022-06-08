@@ -19,6 +19,7 @@ def main():
     logger.info("Performing preprocessing on the raw dataset(s).")
 
     # TODO: call preprocessing scripts here
+    logger.info("[No preprocessing commands]")
     pass
 
 

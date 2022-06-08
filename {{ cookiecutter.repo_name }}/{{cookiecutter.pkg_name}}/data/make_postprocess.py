@@ -19,6 +19,7 @@ def main():
     logger.info("Performing postprocessing on the model predictions.")
 
     # TODO: call postprocessing scripts here
+    logger.info("[No postprocessing commands]")
     pass
 
 

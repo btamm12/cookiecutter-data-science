@@ -43,3 +43,7 @@ huggingface_hub
 jiwer
 pytorch-lightning
 webdataset
+
+# ssh, scp
+paramiko
+scp
